@@ -1,0 +1,37 @@
+body {
+    background: #4298b8 no-repeat 50% 30%;
+    background-image: url(http://www.groovy-lang.org/img/groovy-logo-white.svg),
+                      url(http://kalypso.com/uploads/logos/Logo-Oracle.png);
+    background-size: 240px;
+    background-position: top left, top right;
+}
+
+.reveal .progress span {
+    background: white;
+}
+.navigate-left {
+	border-right-color: white !important;
+}
+.navigate-right {
+	border-left-color: white !important;
+}
+.navigate-down {
+	border-top-color: white !important;
+}
+.navigate-up {
+	border-bottom-color: white !important;
+}
+
+.reveal a {
+    color: yellowgreen;
+}
+
+.overflowable  {
+    height: 300px;
+    overflow: auto;
+    font-size: 0.7em !important;
+}
+
+.reveal pre code {
+    max-height: 600px;
+}

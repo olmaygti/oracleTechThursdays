@@ -1,0 +1,166 @@
+<section data-transition="none">
+    <h3>Java To Groovy</h3>
+    <h4>The Java way</h4>
+    <pre><code>
+public class GroovyExample {
+    private String variable;
+
+    public String getVariable() {
+        return variable;
+    }
+
+    public void setVariable(String variable) {
+        this.variable = variable;
+    }
+
+    public String myMethod() {
+        return this.variable != null
+            ? this.variable
+            : "Not initialised";
+    }
+}
+
+GroovyExample ref = new GroovyExample();
+System.out.println(ref.getVariable());
+System.out.println(ref.myMethod());
+    </code></pre>
+</section>
+<section data-transition="none">
+    <h3>Java To Groovy</h3>
+    <h4>No semicolons!</h4>
+    <pre><code>
+public class GroovyExample {
+    private String variable
+
+    public String getVariable() {
+        return variable
+    }
+
+    public void setVariable(String variable) {
+        this.variable = variable
+    }
+
+    public String myMethod() {
+        return this.variable != null
+            ? this.variable
+            : "Not initialised"
+    }
+}
+
+GroovyExample ref = new GroovyExample()
+System.out.println(ref.getVariable())
+System.out.println(ref.myMethod())
+    </code></pre>
+</section>
+<section data-transition="none">
+    <h3>Java To Groovy</h3>
+    <h4>Default public accessors</h4>
+    <pre><code>
+class GroovyExample {
+    private String variable
+
+    String getVariable() {
+        return variable
+    }
+
+    void setVariable(String variable) {
+        this.variable = variable
+    }
+
+    String myMethod() {
+        return this.variable != null
+            ? this.variable
+            : "Not initialised"
+    }
+}
+
+GroovyExample ref = new GroovyExample()
+System.out.println(ref.getVariable())
+System.out.println(ref.myMethod())
+    </code></pre>
+</section>
+<section data-transition="none">
+    <h3>Java To Groovy</h3>
+    <h4>Getters&Setters Out!</h4>
+    <pre><code>
+class GroovyExample {
+    String variable
+
+    String myMethod() {
+        return this.variable != null
+            ? this.variable
+            : "Not initialised"
+    }
+}
+
+GroovyExample ref = new GroovyExample()
+System.out.println(ref.getVariable())
+System.out.println(ref.myMethod())
+    </code></pre>
+</section>
+<section data-transition="none">
+    <h3>Java To Groovy</h3>
+    <h4>Parentheses optionals</h4>
+    <pre><code>
+class GroovyExample {
+    String variable
+
+    String myMethod() {
+        return this.variable != null
+            ? this.variable
+            : "Not initialised"
+    }
+}
+
+GroovyExample ref = new GroovyExample()
+println ref.getVariable()
+println ref.myMethod()
+    </code></pre>
+</section>
+<section data-transition="none">
+    <h3>Java To Groovy</h3>
+    <h4>The Groovy Way!</h4>
+    <pre><code>
+class GroovyExample {
+    String variable
+
+    String myMethod() {
+        this.variable ?: "Not initialised"
+    }
+}
+
+def ref = new GroovyExample()
+println ref.variable
+println ref.myMethod()
+    </code></pre>
+</section>
+<section data-transition="none">
+    <h3>Java To Groovy</h3>
+    <h4>The Java way</h4>
+    <pre><code>
+public class GroovyExample {
+    private String variable;
+
+    public String getVariable() {
+        return variable;
+    }
+
+    public void setVariable(String variable) {
+        this.variable = variable;
+    }
+
+    public String myMethod() {
+        return this.variable != null
+            ? this.variable
+            : "Not initialised";
+    }
+}
+
+GroovyExample ref = new GroovyExample();
+System.out.println(ref.getVariable());
+System.out.println(ref.myMethod());
+    </code></pre>
+</section>
+<section data-background="images/not_bad.jpg" data-background-size="500px"></section>
+
+

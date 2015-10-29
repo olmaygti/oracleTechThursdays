@@ -1,0 +1,125 @@
+<section data-transition="fade-in slide-out">
+    <h2>Groovy Operators</h2>
+    <p>Groovy supports all Java regular operators</p>
+    <ul>
+        <li>Arithmetic</li>
+        <li>Unary</li>
+        <li>Relational</li>
+        <li>Logical</li>
+        <li>Bitwise</li>
+        <li>Ternary Operator</li>
+    </ul>
+    <p style="font-size: 0.7em;">Important to notice that the <i>==</i> will <strong>always</strong> delegate on the <i>equals()</i> method</p>
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>Groovy Special operators</h3>
+    <h4>Elvis Operator ?:</h4>
+    <p>The elvis operator is a shortcut for the ternary operator, taking advtange of the groovy truth</p>
+    <pre><code>
+    if (reference != null) {
+        return reference;
+    } else {
+        return 'defaultValue';
+    }
+    // Java Ternary
+    return reference != null ? reference : 'defaultValue';
+    // Groovy ternary with groovy truth
+    return reference ? reference : 'defaultValue'
+    // Groovy Elvis Operator
+    reference ?: 'defaultValue'
+    </code></pre>
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>Groovy Special operators</h3>
+    <h4>Safe navigation operator ?.</h4>
+    <p>Comes handy to avoid lots of <strong>if (variable != null)</strong></p>
+    <pre><code>
+    // Java way
+    if (reference != null && reference.getAttribute1() != null) {
+        return reference.getAttribute1().getAttribute2();
+    }
+    // Groovy way
+    reference?.attribute1?.attribute2
+    </code></pre>
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>Groovy Special operators</h3>
+    <h4>Spaceshift operator <=></h4>
+    <p>Shortcut for <i>compareTo()</i> calls</p>
+    <pre><code>
+assert (1 <=> 1) == 0
+assert (1 <=> 2) == -1
+assert (2 <=> 1) == 1
+assert ('a' <=> 'z') == -1        
+    </code></pre>
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>Groovy Special operators</h3>
+    <h4>Regular Expressions Operators =~ and ==~</h4>
+    <p style="font-size:0.8em;">The first one will return an instance of <i>Matcher</i> whilst the second one returns boolean value</p>
+    <pre><code>
+    assert "abcd" ==~ /^a.*$/
+
+    def matcher = "abcd" =~ /^(a).*$/
+    assert matcher[0][1] == 'a'</code></pre>
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>Groovy Special operators</h3>
+    <h4>Spread Operator .*</h4>
+    <p>Invokes an action on all elements off a collection</p>
+    <pre><code>
+class Car {
+    String make
+    String model
+}
+def cars = [
+       new Car(make: 'Peugeot', model: '508'),
+       new Car(make: 'Renault', model: 'Clio')]       
+assert cars*.getMake() == ['Peugeot', 'Renault']
+assert cars.model == ['508', 'Clio']
+    </code></pre>
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>Groovy Special operators</h3>
+    <h4>Direct Field acccess Operator .@</h4>
+    <p style="font-size: 0.8em;">Dot operator will always delegate on the proper setter when used.</p>
+    <p style="font-size: 0.8em;">Use this operator if you want to directly access the attribute value.</p>
+    <p style="font-size: 0.8em;">Take into consideration that visibility modifiers apply the same way as in Java</p>
+    <pre><code>class Test {
+    public String attribute
+
+    def getAttribute() {
+        "$this.attribute - $this.attribute"
+    }
+}
+def test = new Test()
+// Implicit setter call
+test.attribute = 'testString'
+// Implicit getter call
+assert test.attribute == 'testString - testString'
+// Direct field access
+assert test.@attribute = 'testString'
+</code></pre>
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>Groovy Special operators</h3>
+    <h4>Method Operator .&</h4>
+    <p>Stores a reference to a class method</p>
+    <pre><code>def powerList = [2, 3];
+powerList.collect(java.lang.Math.&pow.curry(2))</code></pre>
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>Groovy Special operators</h3>
+    <ul>
+        <li>These are just a subset of all the operators Groovy introduces</li>
+        <li>
+            Groovy supports <strong>operator overloading</strong>!
+            <ul>
+                <li>Just implement the method <i>add()</i> in your classes!</li>
+            </ul>
+        </li>
+        <li>
+            Take a look at the <a href="http://www.groovy-lang.org/operators.html" target="_blank">documentation</a>
+        </li>
+    </ul>
+</section>

@@ -1,0 +1,16 @@
+<section data-transition="fade-in slide-out" ng-init="upperIndex = $index">
+    <h3>MetaProgramming</h3>
+    <h4>Introducing MOP</h4>
+    <p>The <a href="http://www.groovy-lang.org/metaprogramming.html" target="_blank">Meta Object Protocol</a> specifies the method resolution chain in Groovy</p>
+    <ul>
+        <li>Devs can easily intercept any method call (<a href="https://en.wikipedia.org/wiki/Aspect-oriented_programming" target="_blank">AOP</a>)</li>
+        <li>Devs can react to calls to unexistent methods avoiding Exceptions and providing default behaviour (great for <a href="https://en.wikipedia.org/wiki/Domain-specific_language" target="_blank">DSL's</a>)</li>
+        <li>Devs can even create new methods in RunTime!</li>
+        <li>Take a look at <a href="https://grails.github.io/grails-doc/3.0.x/guide/GORM.html#finders" target="_blank">GORM Dynamic Finders</a></li>
+    </ul>
+</section>
+<section data-transition="fade-in slide-out"
+    data-ng-repeat="elm in [0,1,2]"
+    data-ng-include="'slides/console.html'">
+</section>
+

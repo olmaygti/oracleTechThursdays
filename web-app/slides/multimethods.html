@@ -1,0 +1,11 @@
+<h3>Multimethods</h3>
+<p style="font-size: 0.8em;">Because of the dynamic nature of Groovy, the execution of this code will delegate on the proper method at runtime, whereas Java would take that decision at compile time</p>
+<pre><code>int method(String arg) {
+    return 1;
+}
+int method(Object arg) {
+    return 2;
+}
+Object o = "Object";
+int result = method(o); 
+</code></pre>

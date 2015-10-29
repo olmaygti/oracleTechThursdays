@@ -1,0 +1,63 @@
+<section data-transition="fade-in slide-out">
+    <h3>GDK enhancements</h3>
+    <ul>
+        <li>
+            The <i>Groovy Development Kit</i> exposes many enhancements over the JDK  API
+        </li>
+        <li>Check the <a href="http://docs.groovy-lang.org/latest/html/groovy-jdk/java/util/Collection.html" target="_blank">Collections API</a></li>
+        <li>Or the <a href="http://docs.groovy-lang.org/latest/html/groovy-jdk/java/io/File.html" target="_blank">File API</a></li>
+    </ul>
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>GDK enhancements</h3>
+    <h4>Collections API</h4>
+    <pre><code>def users = [
+    new User(name: 'Bill', city: 'Washintong', age: 50),
+    new User(name: 'Barack', city: 'Chicago', age: 43),
+    new User(name: 'Ronald', city: 'New York', age: 99),
+    new User(name: 'George', city: 'oLs Angeles', age: 80),
+    new User(name: 'GeorgeJr', city: 'Los Angeles', age: 60),
+]
+// Simple order by age
+users.sort { a, b -> a.age <=> b.age}
+// All different cities
+users.city.unique()
+// People from LA
+users.findAll { it.city == 'Los Angeles'}
+// Population ages by city
+users.groupBy {
+    it."city"
+}.collect { key, value ->
+    [key: value.age]
+}
+</code></pre>
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>GDK enhancements</h3>
+    <h4>File API</h4>
+    <pre><code>// Reading contents of a given File line by line
+new File('routeToFile').eachLine { println it }
+// Impossible to be this easy!
+def contents new File('routeToFile').text
+// And write those contents to another file ...
+new File('thisDoesntExist') << contents
+// Recursively list all files inside a folder
+new File('routeToFile').eachFileRecursive { println it}
+</code></pre>
+</section>
+<section
+    data-transition="fade-in slide-out"
+    data-background="http://squarewheelscycling.com/uploads/monthly_2015_09/are-you-serious-wtf-meme-baby-face.jpg.ffe3a456188aed36f6942214f24fc19a.jpg"
+    data-background-size="500px">
+    <h4>Where are the Buffered Readers and the try/catch statements?</h4>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h4 style="font-size: 0.8em;">Neither <i>checked</i> nor <i>unchecked</i> exceptions need to be caught</h4>
+</section>
+

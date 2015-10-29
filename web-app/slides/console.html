@@ -1,0 +1,7 @@
+ <h3>Test it out!</h3>
+ <pre><code class="groovy" id="code{{$index}}" data-trim contenteditable ng-bind="elm !== undefined ? contents[upperIndex][elm]: contents[$index]">
+</code></pre>
+<button ng-click="execute($index)">Execute</button>
+<div class="overflowable">
+    {{ result }}
+</div>

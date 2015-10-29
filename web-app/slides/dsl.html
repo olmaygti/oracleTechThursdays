@@ -1,0 +1,34 @@
+<section data-transition="fade-in slide-out">
+    <h3>Groovy and DSL's</h3>
+    <ul>
+        <li>
+            Groovy has extremely powerful capabilities for building <a href="https://en.wikipedia.org/wiki/Domain-specific_language" target="_blank">domain specific languages</a>
+        </li>
+        <li>Create natural language API's for other devs</li>
+        <li>You can even transform your users into developers!</li>
+    </ul>
+</section>
+<section data-transition="fade-in slide-out" data-ng-include="'slides/console.html'">
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>Building your Own</h3>
+    <pre><code>names = []
+def of, having, less = null
+def given(_the) { [names: { Object[] ns -> names.addAll(ns)
+        [and: {n -> names += n }] }] }
+
+def the = [
+        number: { _of -> [names: {_having -> [size: {_less -> [ than: { size ->
+                println names.findAll { it.size() < size}.size() }]}] }] },
+        names : { _having -> [size: { _less -> [than: { size ->
+                names.findAll { it.size() < size}.each { println it } }]}] }
+], all = [
+        the: { println names }
+], display = { it }
+
+given the names "Ted", "Fred", "Jed" and "Ned"
+display all the names
+display the number of names having size less than 4
+display the names having size less than 4
+</code></pre>
+</section>

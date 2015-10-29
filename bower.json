@@ -1,0 +1,21 @@
+{
+  "name": "Oracle Tech Thursdays",
+  "version": "1.0",
+  "authors": [
+    "olmaygti <daniel.ortega.segura@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6",
+    "lodash": "~2.4.1",
+    "angular-animate": "~1.4.6",
+    "reveal.js": "~3.1.0"
+  }
+}

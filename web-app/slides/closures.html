@@ -1,0 +1,39 @@
+<section data-transition="fade-in slide-out">
+    <h2>Closures</h2>   
+    <ul>
+        <li>
+            A closure is just a piece of code that can be referenced
+        </li>
+        <li>
+            Java 8 Lambdas are nice, but they came too late
+        </li>
+        <li>
+            Essential part of the language, they are used every where
+        </li>
+        <li>
+            Just syntactic sugar for inline <strong><i>Anonymous Inner Classes</i></strong>
+        </li>
+        <li>
+            Take a look at the <a href="http://docs.groovy-lang.org/latest/html/api/groovy/lang/Closure.html" target="_blank">API</a>
+        </li>
+    </ul>
+</section>
+<section data-transition="fade-in slide-out" data-ng-include="'slides/console.html'">
+</section>
+<section data-transition="fade-in slide-out">
+    <h3>How does this work?</h3>
+    <pre><code>public interface Collection {
+    ...
+    public void each(Closure closure) {
+        for (Object obj: this.collection) {
+            closure.call(obj);
+        }
+    }
+}
+myCollection.each(new Closure() {
+    public void call(Object obj) {
+        System.out.println(obj);
+    }
+});</code></pre>
+</section>
+
